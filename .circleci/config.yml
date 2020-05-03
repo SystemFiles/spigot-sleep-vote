@@ -1,0 +1,12 @@
+version: 2.1
+filters:
+  branches:
+    only: master
+jobs:
+  build:
+    docker:
+      - image: maven:3.6.3-jdk-8
+    steps:
+      - checkout
+      - run: mvn test
+      - run: mvn clean install
