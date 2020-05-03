@@ -13,12 +13,12 @@ public final class Sleepvote extends JavaPlugin {
     @Override
     public void onEnable() {
         this.getServer().getPluginManager().registerEvents(new PlayerStartSleepingListener(this), this);
-        this.getServer().broadcastMessage(Message.formatMessage("Plugin initialized successfully!"));
+        this.getServer().broadcastMessage(Message.formatMessage("SleepVote initialized successfully!"));
     }
 
     @Override
     public void onDisable() {
-        this.getServer().broadcastMessage(Message.formatMessage("Plugin deactivated..."));
+        this.getServer().broadcastMessage(Message.formatMessage("SleepVote deactivated..."));
     }
 
     public ArrayList<String> getVotes() {
