@@ -1,0 +1,7 @@
+name: SleepVote
+version: ${project.version}
+main: ca.sykesdev.sleepvote.Sleepvote
+api-version: 1.13
+authors: [SystemFiles, Systemx86]
+description: Sleeping starts a vote and if over half of the server population is in bed, automatically make it daytime instead of waiting for all players
+website: sykesdev.ca
