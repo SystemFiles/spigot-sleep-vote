@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public final class Sleepvote extends JavaPlugin {
 
+    // Tracks all votes server-wide for sleeping
     private ArrayList<String> votes = new ArrayList<>();
 
     @Override

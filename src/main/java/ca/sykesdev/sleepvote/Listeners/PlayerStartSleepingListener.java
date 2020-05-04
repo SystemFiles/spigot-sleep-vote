@@ -15,11 +15,19 @@ public class PlayerStartSleepingListener implements Listener {
     private Sleepvote plugin;
     private ArrayList<String> votes;
 
+    /**
+     * Gets all votes and instantiates the listener with plugin instance
+     * @param plugin
+     */
     public PlayerStartSleepingListener(Sleepvote plugin) {
         this.plugin = plugin;
         this.votes = plugin.getVotes();
     }
 
+    /**
+     * Start a vote when first player enters bed and continue adding to vote count when more players enter their beds
+     * @param event The event being triggered (in this case PlayerBedEnterEvent)
+     */
     @EventHandler(ignoreCancelled = true)
     public void onPlayerBedEnter(PlayerBedEnterEvent event) {
         if (event.getPlayer().getWorld().getName().endsWith("_nether")
@@ -49,6 +57,10 @@ public class PlayerStartSleepingListener implements Listener {
         }
     }
 
+    /**
+     * Cancel vote (rem) if player leaves bed before 50% of server enters bed for vote completion
+     * @param event The event of player leaving the bed
+     */
     @EventHandler(ignoreCancelled = true)
     public void onPlayerBedLeave(PlayerBedLeaveEvent event) {
         if (votes.contains(event.getPlayer().getUniqueId().toString())) {
